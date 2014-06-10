@@ -1,0 +1,29 @@
+def utopianTree(n)
+  running_height = 1
+  for i in 0 ... n
+    if i % 2 == 1 
+      running_height = running_height + 1
+       
+    end
+    if i % 2 == 0
+        running_height = running_height * 2
+    end
+  end
+    return running_height
+end
+
+t = gets.chomp
+for i in 0 ... t.to_i
+n = gets.chomp.to_i
+puts utopianTree(n)
+end
+
+  
+
+
+
+#puts utopianTree(1) # <- should return 2
+
+#puts utopianTree(2) # <- should return 3
+
+#puts utopianTree(3) # <- should return 6

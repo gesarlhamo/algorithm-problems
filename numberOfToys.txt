@@ -1,0 +1,31 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def toys(n, k, array)
+  sum = 0
+  i = 0
+  items = [ ]
+  array = array.sort
+ 
+  
+  while sum <= k && n > i
+    sum = sum + array[i]
+      items << array[i]
+      i += 1
+      if sum > k 
+        sum = sum - array[i]
+        items.pop
+        break
+      end
+    end
+    return items.length 
+  end 
+  
+firstline = gets.split(" ")
+n = firstline[0].to_i
+k = firstline[1].to_i
+stringarray = gets.split(" ")
+array = []
+for i in 0...n
+    array.push(stringarray[i].to_i)
+end
+
+puts toys(n, k, array)

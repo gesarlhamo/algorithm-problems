@@ -1,0 +1,27 @@
+def repNum(array)
+  array = array.sort
+  
+  newarray = []
+  
+  repeatedNum = 0
+  for i in 0 ... array.length
+    #puts "i is #{i}"
+    if array[i] == array[i + 1]
+      #puts "array[i] is #{array[i]}"
+      #puts "array[i+1] is #{array[i+ 1]}"
+      repeatedNum = repeatedNum + 1
+      puts "#{array[i]} is repeated"
+    else puts " "
+  
+    end
+    #puts "there are #{curent_total} #{array[i]}s" 
+    #puts "curent_total is #{curent_total}"
+    
+      
+  end
+  puts curent_total
+  
+  
+end
+
+puts repNum([1,2,4,3,2,2,2,5,5,6,5,6])

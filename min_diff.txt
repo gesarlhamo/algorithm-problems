@@ -1,0 +1,40 @@
+def min_diff(array)
+  array = array.sort.reverse
+  current_min_diff = 1000000000000
+  resultArray = []
+  for i in 0...array.length-1
+    #puts "i is " + i.to_s
+    for g in i+1...array.length
+      #puts "g is " + g.to_s
+      diff = array[i] - array[g]
+      #puts "array[i] is " + array[i].to_s
+      #puts "array[g] is " + array[g].to_s
+      #puts "diff is " + diff.to_s
+      if diff == current_min_diff
+         resultArray << array[i]
+         resultArray << array[g]
+      end
+      if diff < current_min_diff
+        current_min_diff = diff
+        resultArray = [] #resetting the array
+        resultArray << array[i]
+        resultArray << array[g]
+      end
+      
+    end
+  end
+  resultArray = resultArray.sort
+  return resultArray.join(" ")
+end
+
+n = gets.chomp.to_i
+ar = gets.chomp.split(" ")
+for i in 0...ar.length 
+  ar[i] = ar[i].to_i
+end
+  puts min_diff(ar)
+
+
+#puts min_diff([10,50,15,20,25,80,100])
+#puts min_diff([10,50,80,100])
+#puts min_diff([100, 51, 50, 4])

@@ -1,0 +1,40 @@
+def flower(n, k, array)
+  cost = 0
+  f = array.length
+  puts "length is " + f.to_s 
+  x = -1
+         array = array.sort
+         array = array.reverse
+         puts "array is " + array.join(",")
+         puts "i\tx\tflower\tcost"
+         puts "__________________"
+         for i in 0...array.length
+          
+           
+             
+           if i%k==0            
+              x += 1
+            end
+              cost = cost + (x+1)*array[i]
+              puts i.to_s + "\t" + x.to_s + "\t" + array[i].to_s + "\t"+ cost.to_s
+         end
+         
+        return "Cost: " + cost.to_s
+            
+    end
+    
+    
+         
+    # keep buying starting 1st index till all flowers finish
+        #array.sort
+          #return array
+    #end
+
+
+puts flower(38,7,[11,13,1,6,12,6,3,12,4,5,4,11,8,13,7,9,6,5,11,5,2,5,3,6,6,8,9,1,5,15,15,3,15,3,4,12,5,2])
+puts flower(6,3,[2,3,4,1,5,7])
+puts flower(3,2,[2,3,1])
+
+
+
+
